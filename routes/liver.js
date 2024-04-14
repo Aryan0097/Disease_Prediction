@@ -32,10 +32,10 @@ router.post('/', (req, res) => {
   });
 
   // Handle stderr data from Python script
-  pythonProcess.stderr.on('data', (data) => {
-    console.error("Python script error:", data.toString());
-    res.status(500).json({ error: 'An error occurred while executing the Python script.' });
-  });
+  // pythonProcess.stderr.on('data', (data) => {
+  //   console.error("Python script error:", data.toString());
+  //   res.status(500).json({ error: 'An error occurred while executing the Python script.' });
+  // });
 
   // Handle Python script process exit
   pythonProcess.on('exit', (code) => {
