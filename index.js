@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const heartRoutes = require('./routes/heart');
 const kidneyRoutes = require('./routes/kidney');
+const diabetesRoutes = require('./routes/diabetes');
 // const authMiddleware = require('./middleware/authMiddleware');
 
 const app = express();
@@ -15,6 +16,7 @@ app.use(bodyParser.json());
 // app.use('/kidney', authMiddleware, kidneyRoutes);
 app.use('/heart',heartRoutes);
 app.use('/kidney',kidneyRoutes);
+app.use('/diabetes',diabetesRoutes);
 
 // Start the server
 app.listen(PORT, () => {
